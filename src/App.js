@@ -1,25 +1,23 @@
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import HikeItem from "./components/HikeItem";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
+const App = () => {
+	const hikes = [
+		{date: new Date(Date.now()), title: "Deez Stepz", mileage: 10},
+		{date: new Date(Date.now()), title: "Deez Stepz", mileage: 10},
+		{date: new Date(Date.now()), title: "Deez Stepz", mileage: 10},
+		{date: new Date(Date.now()), title: "Deez Stepz", mileage: 10}
+	];
+	
+	return (
+		<div>
+			<h2>Hiking Mileage Tracker</h2>
+			<HikeItem date={hikes[0].date} title={hikes[0].title} mileage={hikes[0].mileage}/>
+			<HikeItem date={hikes[1].date} title={hikes[1].title} mileage={hikes[1].mileage}/>
+			<HikeItem date={hikes[2].date} title={hikes[2].title} mileage={hikes[2].mileage}/>
+			<HikeItem date={hikes[3].date} title={hikes[3].title} mileage={hikes[3].mileage}/>
+		</div>
+	);
+};
 
 export default App;
