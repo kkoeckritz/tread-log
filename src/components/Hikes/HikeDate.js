@@ -1,4 +1,4 @@
-import React from "react";
+import PropTypes from "prop-types";
 import "./HikeDate.css";
 
 const HikeDate = (props) => {
@@ -16,7 +16,7 @@ const HikeDate = (props) => {
 };
 
 HikeDate.propTypes = {
-	date: "string"
+	date: PropTypes.instanceOf(Date)
 };
 HikeDate.defaultProps = {
 	date: "undated",
