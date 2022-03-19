@@ -24,7 +24,7 @@ const HikeForm = (props) => {
 
 		const newHikeData = {
 			title: enteredTitle,
-			mileage: enteredMileage,
+			mileage: parseInt(enteredMileage),
 			date: new Date(enteredDate)
 		};
 		
@@ -37,17 +37,17 @@ const HikeForm = (props) => {
 	return (
 		<form onSubmit={submitHandler}>
 			<div className="new-hike__controls">
-				<div className="new-hike__control">
+				<div className="new-hike__control new-hike__control--text">
 					<label>Title</label>
-					<input type="text" value={enteredTitle} onChange={titleChangeHandler} />
+					<input type="text" value={enteredTitle} onChange={titleChangeHandler} required/>
 				</div>
-				<div className="new-hike__control">
+				<div className="new-hike__control new-hike__control--number">
 					<label>Mileage</label>
-					<input type="number" min=".25" step=".01" value={enteredMileage} onChange={mileageChangeHandler} />
+					<input type="number" min=".25" step=".01" value={enteredMileage} onChange={mileageChangeHandler} required/>
 				</div>
-				<div className="new-hike__control">
+				<div className="new-hike__control new-hike__control--date">
 					<label>Date</label>
-					<input type="date" min="2010-01-01" max={todayDate} value={enteredDate} onChange={dateChangeHandler} />
+					<input type="date" min="2010-01-01" max={todayDate} value={enteredDate} onChange={dateChangeHandler} required/>
 				</div>
 			</div>
 			<div className="new-hike__actions">

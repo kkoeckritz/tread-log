@@ -6,20 +6,35 @@ import HikeItem from "./HikeItem";
 import "./Hikes.css";
 
 const Hikes = (props) => {
-	const [filteredYear, setFilteredYear] = useState("2021");
-
+	const yearList = [];
+	let recentYear = 1929;
+	
+	for (let h of props.hikes) {
+		const currentYear = h.date.getFullYear();
+		if (!yearList.includes(currentYear)) {
+			yearList.push(currentYear);
+		}
+		if (recentYear < currentYear) {
+			recentYear = currentYear;
+		}
+	}
+	
+	const [filteredYear, setFilteredYear] = useState(recentYear);
 	const filterYearHandler = (chosenYear) => {
 		setFilteredYear(chosenYear);
-		console.log(chosenYear);
 	};
-	
+
+	const filteredHikes = props.hikes.filter(hike => hike.date.getFullYear() == filteredYear);
+	let hikesContent = <p>No hikes found for {filteredYear}</p>;
+
+	if (filteredHikes.length > 0) {
+		hikesContent = filteredHikes.map((hike, i) => <HikeItem date={hike.date} title={hike.title} mileage={hike.mileage} key={i} />);
+	}
+
 	return (
 		<Card className="hikes">
-			<HikesFilter filteredYear={filteredYear} onFilterYear={filterYearHandler} />
-			<HikeItem date={props.hikes[0].date} title={props.hikes[0].title} mileage={props.hikes[0].mileage}/>
-			<HikeItem date={props.hikes[1].date} title={props.hikes[1].title} mileage={props.hikes[1].mileage}/>
-			<HikeItem date={props.hikes[2].date} title={props.hikes[2].title} mileage={props.hikes[2].mileage}/>
-			<HikeItem date={props.hikes[3].date} title={props.hikes[3].title} mileage={props.hikes[3].mileage}/>
+			<HikesFilter yearList={yearList} filteredYear={filteredYear} onFilterYear={filterYearHandler} />
+			{hikesContent}
 		</Card>
 	);
 };

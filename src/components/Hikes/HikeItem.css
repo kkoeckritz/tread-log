@@ -6,7 +6,7 @@
   margin: 1rem 0;
   padding: 0.5rem;
 
-  background-color: #4b4b4b;
+  background-color: hsl(20, 40%, 40%);
 }
 
 .hike-item__description {
@@ -31,7 +31,7 @@
 .hike-item__mileage {
   padding: 0.5rem;
 
-  background-color: #40005d;
+  background-color: hsl(162, 40%, 20%);
   color: white;
   font-size: 1rem;
   font-weight: bold;

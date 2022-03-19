@@ -1,8 +1,18 @@
+form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 1rem;
+  width: 100%;
+}
+
 .new-hike__controls {
   display: flex;
-  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: stretch;
+  flex-wrap: nowrap;
   gap: 1rem;
-  margin-bottom: 1rem;
+
   text-align: left;
 }
 
@@ -17,10 +27,57 @@
   padding: 0.5rem;
   border-radius: 6px;
   border: 1px solid #ccc;
-  width: 20rem;
-  max-width: 100%;
+}
+
+.new-hike__control--text {
+  width: 100%;
+}
+
+.new-hike__control--text input {
+  width: 100%;
+}
+
+.new-hike__control--number input {
+  max-width: 6rem;
+}
+
+.new-hike__control--date input {
+  max-width: auto;
 }
 
 .new-hike__actions {
+  display: flex;
+  justify-content: center;
   text-align: right;
+}
+
+.new-hike__actions button {
+  font: inherit;
+  cursor: pointer;
+  padding: 1rem 2rem;
+  border: 1px solid hsl(162, 40%, 20%);
+  background-color: hsl(162, 40%, 20%);
+  color: white;
+  border-radius: 12px;
+}
+
+.new-hike__actions button:hover,
+.new-hike__actions button:active {
+  background-color: hsl(162, 40%, 26%);
+  border-color: hsl(162, 40%, 26%);
+}
+
+.new-hike__actions button:disabled {
+  background-color: hsl(162, 50%, 26%);
+}
+
+.new-hike__actions button.alternative {
+  color: hsl(24, 40%, 20%);
+  border-color: transparent;
+  background-color: transparent;
+}
+
+.new-hike__actions button.alternative:hover,
+.new-hike__actions button.alternative:active {
+  background-color: hsl(24, 40%, 24%);
 }
