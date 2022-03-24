@@ -24,7 +24,7 @@ const HikeForm = (props) => {
 
 		const newHikeData = {
 			title: enteredTitle,
-			mileage: parseInt(enteredMileage),
+			mileage: +enteredMileage,
 			date: new Date(enteredDate)
 		};
 		

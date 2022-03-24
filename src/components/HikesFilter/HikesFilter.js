@@ -4,7 +4,8 @@ import "./HikesFilter.css";
 const HikesFilter = (props) => {
 
 	const dropdownChangeHandler = (e) => {
-		props.onFilterYear(parseInt(e.target.value));
+		const yearInt = +e.target.value;
+		props.onFilterYear(yearInt);
 	};
 
 	let optionContent = props.yearList.map((year, i) => (
