@@ -30,4 +30,3 @@ HikesFilter.propTypes = {
 };
 	
 export default HikesFilter;
-	

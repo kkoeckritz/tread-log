@@ -1,4 +1,3 @@
-import { useState } from "react";
 import PropTypes from "prop-types";
 import Card from "../UI/Card";
 import HikeDate from "./HikeDate";
@@ -10,7 +9,7 @@ const HikeItem = (props) => {
 			<HikeDate date={props.date}/>
 			<div className="hike-item__description">
 				<h2>{props.title}</h2>
-				<h5 className="hike-item__mileage">{props.mileage}</h5>
+				<div className="hike-item__mileage">{props.mileage} mi</div>
 			</div>
 		</Card>
 	);

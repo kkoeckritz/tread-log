@@ -47,10 +47,11 @@ const HikeForm = (props) => {
 				</div>
 				<div className="new-hike__control new-hike__control--date">
 					<label>Date</label>
-					<input type="date" min="2010-01-01" max={todayDate} value={enteredDate} onChange={dateChangeHandler} required/>
+					<input type="date" min="2000-01-01" max={todayDate} value={enteredDate} onChange={dateChangeHandler} required/>
 				</div>
 			</div>
 			<div className="new-hike__actions">
+				<button onClick={props.onCancelSubmit}>Cancel</button>
 				<button type="submit">Add Hike</button>
 			</div>
 		</form>
@@ -58,6 +59,7 @@ const HikeForm = (props) => {
 };
 
 HikeForm.propTypes = {
+	onCancelSubmit: PropTypes.func,
 	onSubmitHike: PropTypes.func
 };
 

@@ -1,6 +1,6 @@
 .hikes {
   padding: 1rem;
-  background-color: rgb(31, 31, 31);
+  background-color: var(--color__accent--dark);
   margin: 2rem auto;
   width: 50rem;
   max-width: 95%;

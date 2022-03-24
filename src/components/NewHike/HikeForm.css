@@ -4,6 +4,7 @@ form {
   justify-content: center;
   gap: 1rem;
   width: 100%;
+  padding: 1rem;
 }
 
 .new-hike__controls {
@@ -12,7 +13,6 @@ form {
   justify-content: stretch;
   flex-wrap: nowrap;
   gap: 1rem;
-
   text-align: left;
 }
 
@@ -25,8 +25,8 @@ form {
 .new-hike__control input {
   font: inherit;
   padding: 0.5rem;
+  border: none;
   border-radius: 6px;
-  border: 1px solid #ccc;
 }
 
 .new-hike__control--text {
@@ -48,32 +48,33 @@ form {
 .new-hike__actions {
   display: flex;
   justify-content: center;
+  gap: 1rem;
   text-align: right;
 }
 
 .new-hike__actions button {
-  font: inherit;
-  cursor: pointer;
-  padding: 1rem 2rem;
-  border: 1px solid hsl(162, 40%, 20%);
-  background-color: hsl(162, 40%, 20%);
+  padding: .5rem 1.5rem;
+  background-color: hsl(0, 82%, 70%);
   color: white;
+  font: inherit;
+  font-size: 1.25rem;
+  font-weight: bold;
+  border: none;
   border-radius: 12px;
+  cursor: pointer;
 }
 
 .new-hike__actions button:hover,
 .new-hike__actions button:active {
-  background-color: hsl(162, 40%, 26%);
-  border-color: hsl(162, 40%, 26%);
+  background-color: var(--color__base--red);
 }
 
 .new-hike__actions button:disabled {
-  background-color: hsl(162, 50%, 26%);
+  background-color: var(--color__base--red);
 }
 
 .new-hike__actions button.alternative {
   color: hsl(24, 40%, 20%);
-  border-color: transparent;
   background-color: transparent;
 }
 
